@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="text-white">
+    <div>
+    <img src="{{b.image.url}}" height="350px" width="300px">
+    </div>
+</div>
+    <div id="position2">
+        <h3>{{b.name}}</h3><br>
+        <div style="height:120px; width:300px;">
+        <p>{{b.desc}}</p>
+        <h6>Release year: {{b.year}}</h6>
+        </div><br><br>
+        <a class="btn btn-warning me-2" href="{% url 'app:edit' b.name %}" role="button">Update
+        <a class="btn btn-danger" href="{% url 'app:delete' b.name %}" role="button">Delete</a>
+<!--        <button type="button" class="btn btn-warning">Update</button>-->
+<!--        <button type="button" class="btn btn-danger">Delete</button>-->
+
+
+    </div>
+
+{% endblock %}
